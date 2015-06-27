@@ -1,3 +1,10 @@
 //= require _vendor/bootstrap.min
 //= require _vendor/codemirror
 //= require _vendor/codemirror-solarized
+ul.navbar-nav li{
+  padding: 5px;
+}
+#code-link {
+  padding-top: 2px;
+  width: 400px;
+}
