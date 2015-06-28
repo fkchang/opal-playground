@@ -20,14 +20,14 @@ class CodeLinkHandler
 
   def create_link_for_code opal_code, html_code, css_code
     if opal_code
-      @location.origin + @location.pathname + "#code:" + `encodeURIComponent(#{opal_code})` + "&html_code=" + `encodeURIComponent(#{html_code})` + "&css_code=" + `encodeURIComponent(#{css_code})`
+      @location.origin + @location.pathname + "?code:" + `encodeURIComponent(#{opal_code})` + "&html_code=" + `encodeURIComponent(#{html_code})` + "&css_code=" + `encodeURIComponent(#{css_code})`
     else
       nil
     end
   end
   # initialize irb w/link passed in code ala try opal
   def grab_link_code
-    link_code = `decodeURIComponent(#{@location.hash})`
+    link_code = `decodeURIComponent(#{@location.hash}||#{@location.search})`
     if link_code != ''
       raw_code = link_code[6..-1]
       opal_code, html_code, css_code = raw_code.split(/&(?:html|css)_code=/)
