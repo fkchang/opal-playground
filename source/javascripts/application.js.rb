@@ -91,7 +91,8 @@ module Playground
       opts = { lineNumbers: true,
                theme: 'solarized light',
                extraKeys: {
-                 'Cmd-Enter' => proc { run_code }
+                 'Cmd-Enter' => proc { run_code },
+                 'Cmd-S' => proc { create_link}
                }
       }.merge(opts)
 
