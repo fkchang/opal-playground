@@ -1,5 +1,5 @@
-require '_vendor/jquery'
 require 'opal'
+require '_vendor/jquery'
 require 'opal-jquery'
 require 'browser'
 require 'lissio'
