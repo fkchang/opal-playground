@@ -1,6 +1,8 @@
 //= require _vendor/bootstrap.min
 //= require _vendor/codemirror
 //= require _vendor/codemirror-solarized
+//= require _vendor/jqconsole
+//= require _vendor/jquery-ui
 ul.navbar-nav li{
   padding: 5px;
 }
@@ -11,4 +13,8 @@ ul.navbar-nav li{
 #result-frame {
   width: 100%;
   min-height: 300px;
+}
+
+#opal-irb {
+  height: 400px;
 }

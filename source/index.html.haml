@@ -4,6 +4,7 @@
     %meta(charset="utf-8")
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
+    %script{src: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'}
 
   %body
     %nav.navbar.navbar-default
@@ -30,3 +31,5 @@
         .top-pane#css_pane
         .bottom-pane#result_pane
           %iframe#result-frame(frameborder="0")
+    .row
+      .col-md-12#opal-irb
