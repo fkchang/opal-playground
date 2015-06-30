@@ -9,7 +9,8 @@
 }
 .iframe-docs {
   width: 100%;
-  min-height: 500px;
+  // min-height: 500px;
+  height: 60vh;
 }
 #opal-docs {
   height: 800px;
@@ -36,18 +37,17 @@ $right-sidebar-width: 800px;
 .sidebar-content {
   box-shadow: 0 0 30px 5px #999;
   border-radius: 5px;
+  background-color: white;
 }
 #sidebar-content-left {
   width: 95%;
   float: left;
-  background-color: white;
 }
 
 #sidebar-content-right {
   width: 95%;
   height: 90vh;
   float: right;
-  background-color: white;
 }
 
 #toggleSidebar {
