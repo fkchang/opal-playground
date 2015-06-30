@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <link href="stylesheets/application.css" rel="stylesheet" type="text/css" />
     <script src="javascripts/application.js" type="text/javascript"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'></script>
   </head>
   <body>
     <nav class='navbar navbar-default'>
@@ -26,19 +27,135 @@
             <li>
               <input id='code-link' type='text'>
             </li>
+            <li>
+              <button class='btn btn-primary' id='help-link'>Help</button>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class='row'>
-      <div class='col-md-6'>
-        <div class='top-pane' id='html_pane'></div>
-        <div class='bottom-pane' id='ruby_pane'></div>
+      <div class='col-md-4'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>HTML</div>
+          <div class='panel-body'>
+            <div class='top-pane' id='html_pane'></div>
+          </div>
+        </div>
       </div>
-      <div class='col-md-6'>
-        <div class='top-pane' id='css_pane'></div>
-        <div class='bottom-pane' id='result_pane'>
-          <iframe frameborder='0' id='result-frame'></iframe>
+      <div class='col-md-4'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>OPAL</div>
+          <div class='panel-body'>
+            <div class='top-pane' id='ruby_pane'></div>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>CSS</div>
+          <div class='panel-body'>
+            <div class='top-pane' id='css_pane'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row stretchy'>
+      <div class='col-md-12'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            RESULTS
+            <button class='btn btn-primary btn-xs pull-right' id='show-irb-button'>Show Irb</button>
+          </div>
+          <div class='panel-body'>
+            <div class='bottom-pane' id='result_pane'>
+              <iframe frameborder='0' id='result-frame'></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='sidebar' id='sidebar-left'>
+      <!-- Sidebar content -->
+      <div class='sidebar-content' id='sidebar-content-left'>
+        <button class='btn btn-primary btn-xs' id='show-compiled-javascript'>Show Compiled Javascript</button>
+        <div class='accordion' id='accordianParent'>
+          <div class='accordion-group'>
+            <div class='accordion-heading'>
+              <a class='accordion-toggle-small' data-parent='#accordianParent' data-toggle='collapse' href='#directions'>
+                Directions
+              </a>
+            </div>
+            <div class='accordion-body collapse' id='directions'>
+              <div class='accordion-inner-small'>
+                Opal-playground is a jsBin like but with an Opal focus.  It inclues other things like a built REPL via opal-irb.
+                <ul>
+                  <li>To show opal-irb, press the 'Show Irb' button</li>
+                  <li>To hide opal-irb, click on the red 'X'</li>
+                </ul>
+                There are 2 slide out sections
+                <ul>
+                  <li>The left slide out, also toggle-able from the help button, gives help and a way to show the compiled code. Click on the > to open, and < to close</li>
+                  <li>The right slide out shows the results of compilation after 'Run Code' is performed. Compile errors willl show here as well.  Click the < to open and the > to close</li>
+                </ul>
+              </div>
+            </div>
+            <div class='accordion-heading'>
+              <a class='accordion-toggle-small' data-parent='#accordianParent' data-toggle='collapse' href='#opal-docs'>
+                Opal Docs
+              </a>
+            </div>
+            <div class='accordion-body collapse' id='opal-docs'>
+              <div class='accordion-inner-small'>
+                <iframe class='iframe-docs' src='http://opalrb.org/docs/'></iframe>
+              </div>
+            </div>
+            <div class='accordion-heading'>
+              <a class='accordion-toggle-small' data-parent='#accordianParent' data-toggle='collapse' href='#opal-jquery-docs'>
+                Opal jQuery Docs
+              </a>
+            </div>
+            <div class='accordion-body collapse' id='opal-jquery-docs'>
+              <div class='accordion-inner-small'>
+                <iframe class='iframe-docs' src='http://opalrb.org/docs/jquery/'></iframe>
+              </div>
+            </div>
+            <div class='accordion-heading'>
+              <a class='accordion-toggle-small' data-parent='#accordianParent' data-toggle='collapse' href='#opal-browser-docs'>
+                Opal Browser Docs
+              </a>
+            </div>
+            <div class='accordion-body collapse' id='opal-browser-docs'>
+              <div class='accordion-inner-small'>
+                <!-- %iframe.iframe-docs(src='https://github.com/opal/opal-browser') -->
+              </div>
+            </div>
+            <div class='accordion-heading'>
+              <a class='accordion-toggle-small' data-parent='#accordianParent' data-toggle='collapse' href='#lissio-docs'>
+                Lissio Docs
+              </a>
+            </div>
+            <div class='accordion-body collapse' id='lissio-docs'>
+              <div class='accordion-inner-small'>
+                <!-- %iframe.iframe-docs(src='https://github.com/meh/lissio') -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class='toggles' href='#' id='toggleSidebar'>
+        <i class='glyphicon glyphicon-chevron-right'></i>
+      </a>
+    </div>
+    <div class='sidebar' id='sidebar-right'>
+      <a class='toggles' href='#' id='toggleSidebar-right'>
+        <i class='glyphicon glyphicon-chevron-left'></i>
+      </a>
+      <!-- Sidebar content -->
+      <div class='sidebar-content' id='sidebar-content-right'>
+        <h1>Compiled Javascript</h1>
+        <div id='sidebar-results'>
+          <div id='javascript_pane'></div>
         </div>
       </div>
     </div>
