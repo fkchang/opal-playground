@@ -21,18 +21,25 @@ class Sidebar
   attr_reader :closed_icon_class, :opened_icon_class,
               :opened_x_position, :closed_x_position,
               :x_position_side
+  LEFT_SIDEBAR_WIDTH = 600
+  RIGHT_SIDEBAR_WIDTH = 800
+  OPEN_X_OFFSET = 20
+
+  def closed_width_for(width)
+    width * -1 + 20
+  end
   def set_params_for_side(side)
     if side == :left
       @closed_icon_class = 'glyphicon-chevron-right'
       @opened_icon_class = 'glyphicon-chevron-left'
-      @opened_x_position = 20
-      @closed_x_position = -180
+      @opened_x_position = OPEN_X_OFFSET
+      @closed_x_position = closed_width_for(LEFT_SIDEBAR_WIDTH)
       @x_position_side = 'left'
     else
       @closed_icon_class = 'glyphicon-chevron-left'
       @opened_icon_class = 'glyphicon-chevron-right'
-      @opened_x_position = 20
-      @closed_x_position = -780
+      @opened_x_position = OPEN_X_OFFSET
+      @closed_x_position = closed_width_for(RIGHT_SIDEBAR_WIDTH)
       @x_position_side = 'right'
     end
   end

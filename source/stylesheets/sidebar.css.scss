@@ -1,59 +1,67 @@
 .accordion-heading .accordion-toggle-small {
-    display: block;
-    padding: 4px 8px; /*8px 15px;*/
+  display: block;
+  padding: 4px 8px; /*8px 15px;*/
 }
 
 .accordion-inner-small {
-    padding: 4px 8px;  /*9px 15px;*/
-    border-top: 1px solid #e5e5e5;
+  padding: 4px 8px;  /*9px 15px;*/
+  border-top: 1px solid #e5e5e5;
 }
-
-
+.iframe-docs {
+  width: 100%;
+  min-height: 500px;
+}
 #opal-docs {
   height: 800px;
 }
 .sidebar {
   z-index: 5;// more than codemirror
-    xbackground: white;
-    position: fixed;
-    top: 50px;
+  xbackground: white;
+  position: fixed;
+  top: 50px;
 }
-
+$left-sidebar-width: 600px;
+$open-x-offset: 20px;
 #sidebar-left {
-    left: -180px;
-    width: 200px;
+  left: $left-sidebar-width * -1 + $open-x-offset; /*-180px*/
+  width: $left-sidebar-width;            /*200px*/
 }
+$right-sidebar-width: 800px;
 #sidebar-right {
-    right: -780px;
-    width: 800px;
-    height: 80%px;
+  right: $right-sidebar-width * -1 + $open-x-offset; /* -780px;*/
+  width: $right-sidebar-width;
+  height: 80%px;
 }
 
-#sidebar-content {
-    width: 80%;
-    float: left;
-    background-color: white;
+.sidebar-content {
+  box-shadow: 0 0 30px 5px #999;
+  border-radius: 5px;
+}
+#sidebar-content-left {
+  width: 95%;
+  float: left;
+  background-color: white;
 }
 
 #sidebar-content-right {
-    width: 95%;
-    height: 90vh;
-    float: right;
-    background-color: white;
+  width: 95%;
+  height: 90vh;
+  float: right;
+  background-color: white;
 }
 
 #toggleSidebar {
-    float: right;
-    height: 100%;
-    width: 20px;
-    margin-top: 41px;
+  float: right;
+  height: 100%;
+  width: 20px;
+  margin-top: 41px;
 }
 
 #toggleSidebar-right {
-    float: left;
-    height: 100%;
-    width: 20px;
-    margin-top: 41px;
+  float: left;
+  height: 100%;
+  width: 20px;
+  margin-top: 41px;
 }
 
 #sidebar-results {
@@ -62,22 +70,22 @@
 }
 
 [class^="glyphicon-"], [class*=" glyphicon-"] {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    *margin-right: .3em;
-    line-height: 14px;
-    vertical-align: text-top;
-    background-image: url("/images/glyphicons-halflings.png");
-    background-position: 14px 14px;
-    background-repeat: no-repeat;
-    margin-top: 1px;
-}
+                         display: inline-block;
+                         width: 14px;
+                         height: 14px;
+                         *margin-right: .3em;
+                         line-height: 14px;
+                         vertical-align: text-top;
+                         background-image: url("/images/glyphicons-halflings.png");
+                         background-position: 14px 14px;
+                         background-repeat: no-repeat;
+                         margin-top: 1px;
+                       }
 
 .glyphicon-chevron-left {
-    background-position: -432px -72px;
+  background-position: -432px -72px;
 }
 
 .glyphicon-chevron-right {
-    background-position: -456px -72px;
+  background-position: -456px -72px;
 }

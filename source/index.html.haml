@@ -50,7 +50,7 @@
               %iframe#result-frame(frameborder="0")
     #sidebar-left.sidebar
       / Sidebar content
-      #sidebar-content
+      #sidebar-content-left.sidebar-content
         %button.btn.btn-xs#show-compiled-javascript Show Compiled Javascript
         #accordianParent.accordion
           .accordion-group
@@ -65,25 +65,25 @@
                 Opal Docs
             #opal-docs.accordion-body.collapse
               .accordion-inner-small
-                %iframe(src='http://opalrb.org/docs/')
+                %iframe.iframe-docs(src='http://opalrb.org/docs/')
             .accordion-heading
               %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-jquery-docs"}
                 Opal jQuery Docs
             #opal-jquery-docs.accordion-body.collapse
               .accordion-inner-small
-                %iframe(src='http://opalrb.org/docs/jquery/')
+                %iframe.iframe-docs(src='http://opalrb.org/docs/jquery/')
             .accordion-heading
               %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-browser-docs"}
                 Opal Browser Docs
             #opal-browser-docs.accordion-body.collapse
               .accordion-inner-small
-                %iframe(src='https://github.com/opal/opal-browser')
+                / %iframe.iframe-docs(src='https://github.com/opal/opal-browser')
             .accordion-heading
               %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#lissio-docs"}
                 Lissio Docs
             #lissio-docs.accordion-body.collapse
               .accordion-inner-small
-                %iframe(src='https://github.com/meh/lissio')
+                / %iframe.iframe-docs(src='https://github.com/meh/lissio')
 
       %a#toggleSidebar.toggles{:href => "#"}
         %i.glyphicon.glyphicon-chevron-right
@@ -94,7 +94,7 @@
         %i.glyphicon.glyphicon-chevron-left
 
       / Sidebar content
-      #sidebar-content-right
+      #sidebar-content-right.sidebar-content
         %h1 Compiled Javascript
         #sidebar-results
           #javascript_pane
