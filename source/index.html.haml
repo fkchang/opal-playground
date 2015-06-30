@@ -23,13 +23,25 @@
               %input#code-link{type: 'text'}
 
     .row
-      .col-md-6
-        .top-pane#html_pane
-        .bottom-pane#ruby_pane
-
-      .col-md-6
-        .top-pane#css_pane
-        .bottom-pane#result_pane
-          %iframe#result-frame(frameborder="0")
-    .row
-      .col-md-12#opal-irb
+      .col-md-4
+        .panel.panel-default
+          .panel-heading HTML
+          .panel-body
+            .top-pane#html_pane
+      .col-md-4
+        .panel.panel-default
+          .panel-heading OPAL
+          .panel-body
+            .top-pane#ruby_pane
+      .col-md-4
+        .panel.panel-default
+          .panel-heading CSS
+          .panel-body
+            .top-pane#css_pane
+    .row.stretchy
+      .col-md-12
+        .panel.panel-default
+          .panel-heading RESULTS
+          .panel-body
+            .bottom-pane#result_pane
+              %iframe#result-frame(frameborder="0")

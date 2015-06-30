@@ -12,9 +12,13 @@ ul.navbar-nav li{
 }
 #result-frame {
   width: 100%;
-  min-height: 300px;
+  min-height: 400px;
+  // height: 400px;
 }
 
 #opal-irb {
   height: 400px;
+}
+.stretch {
+  height: 80%;
 }

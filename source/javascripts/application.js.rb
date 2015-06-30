@@ -9,7 +9,7 @@ require '_vendor/bootstrap'
 require 'nodeutil'
 require 'jqconsole'
 require 'opal-jquery'
-require 'opal_irb_jqconsole'
+# require 'opal_irb_jqconsole'
 
 require '_vendor/codemirror'
 require '_vendor/codemirror-html'
@@ -76,7 +76,7 @@ module Playground
       @html.value = HTML
       @ruby.value = RUBY
       @css.value = CSS
-      OpalIrbJqconsole.create("#opal-irb")
+      # OpalIrbJqconsole.create("#opal-irb")
 
       Element.find('#run-code').on(:click) { run_code }
       Element.find('#create-link').on(:click) { create_link}
@@ -120,6 +120,8 @@ module Playground
             <style>#{css}</style>
           </head>
           <body>
+            <button id='show-irb'>Show Irb</button>
+            <hr/>
             #{html}
             <script src="javascripts/result_boot.js"></script>
             <script>
@@ -194,7 +196,7 @@ IRB_STYLE = %|
 #opal-irb-console {
   height: 100px;
   position:relative;
-  background-color: #9b111e;
+  # background-color: #9b111e;
   border: 2px solid #CCC;
   margin: 0 auto;
 }
