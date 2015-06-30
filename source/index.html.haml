@@ -44,14 +44,16 @@
     .row.stretchy
       .col-md-12
         .panel.panel-default
-          .panel-heading RESULTS
+          .panel-heading
+            RESULTS
+            %button.btn.btn-primary.btn-xs.pull-right#show-irb-button Show Irb
           .panel-body
             .bottom-pane#result_pane
               %iframe#result-frame(frameborder="0")
     #sidebar-left.sidebar
       / Sidebar content
       #sidebar-content-left.sidebar-content
-        %button.btn.btn-xs#show-compiled-javascript Show Compiled Javascript
+        %button.btn.btn-primary.btn-xs#show-compiled-javascript Show Compiled Javascript
         #accordianParent.accordion
           .accordion-group
             .accordion-heading
@@ -59,7 +61,14 @@
                 Directions
             #directions.accordion-body.collapse
               .accordion-inner-small
-                This something like jsBin but with an Opal focus.  It inclues other things like a built
+                Opal-playground is a jsBin like but with an Opal focus.  It inclues other things like a built REPL via opal-irb.
+                %ul
+                  %li To show opal-irb, press the 'Show Irb' button
+                  %li To hide opal-irb, click on the red 'X'
+                There are 2 slide out sections
+                %ul
+                  %li The left slide out, also toggle-able from the help button, gives help and a way to show the compiled code. Click on the > to open, and < to close
+                  %li The right slide out shows the results of compilation after 'Run Code' is performed. Compile errors willl show here as well.  Click the < to open and the > to close
             .accordion-heading
               %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-docs"}
                 Opal Docs

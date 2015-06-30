@@ -84,6 +84,10 @@ module Playground
 
       Element.find('#run-code').on(:click) { run_code }
       Element.find('#create-link').on(:click) { create_link}
+      Element.id('show-irb-button').on(:click) {
+        remote_console = `#{@result}[0].contentWindow.Opal.OpalIrbJqconsole`
+        remote_console.show_panel
+      }
       load_link_code_if_needed
       setup_sidebars
       run_code
@@ -143,8 +147,6 @@ module Playground
             <style>#{css}</style>
           </head>
           <body>
-            <button id='show-irb'>Show Irb</button>
-            <hr/>
             #{html}
             <script src="javascripts/result_boot.js"></script>
             <script>

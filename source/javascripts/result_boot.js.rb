@@ -24,6 +24,5 @@ class OpalIrbLogRedirector
 end
 
 Document.ready? do
-  OpalIrbJqconsole.create_bottom_panel
-  OpalIrbJqconsole.add_open_panel_behavior("show-irb")
+  OpalIrbJqconsole.create_bottom_panel(true)
 end
