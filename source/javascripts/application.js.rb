@@ -17,6 +17,8 @@ require '_vendor/codemirror-css'
 require '_vendor/codemirror-ruby'
 require '_vendor/codemirror-emacs'
 
+require 'sidebar'
+
 class CodeLinkHandler
 
   def initialize(location=`window.location`)
@@ -70,6 +72,8 @@ module Playground
       @html = create_editor(:html_pane, mode: 'xml')
       @ruby = create_editor(:ruby_pane, mode: 'ruby')
       @css  = create_editor(:css_pane, mode: 'css')
+      @javascript = create_editor(:javascript_pane, mode: 'javascript')
+
       @result = Element['#result-frame']
       @code_link_hander = CodeLinkHandler.new
 
@@ -81,7 +85,19 @@ module Playground
       Element.find('#run-code').on(:click) { run_code }
       Element.find('#create-link').on(:click) { create_link}
       load_link_code_if_needed
+      setup_sidebars
       run_code
+    end
+
+    def setup_sidebars
+      @left_sidebar = Sidebar.new('#sidebar-left', 'left')
+      @right_sidebar = Sidebar.new('#sidebar-right', 'right')
+      Element.id('show-compiled-javascript').on :click do
+        @right_sidebar.toggle
+      end
+      Element.id('help-link').on :click do
+        @left_sidebar.toggle
+      end
     end
 
     def load_link_code_if_needed
@@ -107,7 +123,14 @@ module Playground
 
     def run_code
       html, css, ruby = @html.value, @css.value, @ruby.value
-      javascript = Opal.compile ruby
+      begin
+        javascript = Opal.compile ruby
+        @javascript.value = javascript
+      rescue Exception => e
+         @javascript.value = "COMPILATION ERROR:\n\n#{e.backtrace.join("\n")}"
+         @right_sidebar.open
+        return
+      end
 
       update_iframe(<<-HTML)
         <html>

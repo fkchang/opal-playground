@@ -1,0 +1,83 @@
+.accordion-heading .accordion-toggle-small {
+    display: block;
+    padding: 4px 8px; /*8px 15px;*/
+}
+
+.accordion-inner-small {
+    padding: 4px 8px;  /*9px 15px;*/
+    border-top: 1px solid #e5e5e5;
+}
+
+
+#opal-docs {
+  height: 800px;
+}
+.sidebar {
+  z-index: 5;// more than codemirror
+    xbackground: white;
+    position: fixed;
+    top: 50px;
+}
+
+#sidebar-left {
+    left: -180px;
+    width: 200px;
+}
+#sidebar-right {
+    right: -780px;
+    width: 800px;
+    height: 80%px;
+}
+
+#sidebar-content {
+    width: 80%;
+    float: left;
+    background-color: white;
+}
+
+#sidebar-content-right {
+    width: 95%;
+    height: 90vh;
+    float: right;
+    background-color: white;
+}
+
+#toggleSidebar {
+    float: right;
+    height: 100%;
+    width: 20px;
+    margin-top: 41px;
+}
+
+#toggleSidebar-right {
+    float: left;
+    height: 100%;
+    width: 20px;
+    margin-top: 41px;
+}
+
+#sidebar-results {
+  height: 100%;
+  overflow-y: scroll
+}
+
+[class^="glyphicon-"], [class*=" glyphicon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    *margin-right: .3em;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url("/images/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    margin-top: 1px;
+}
+
+.glyphicon-chevron-left {
+    background-position: -432px -72px;
+}
+
+.glyphicon-chevron-right {
+    background-position: -456px -72px;
+}

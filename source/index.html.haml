@@ -13,6 +13,7 @@
       .container
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
+
             %li
               %button.btn.btn-primary#run-code
                 Run Code (Cmd+Enter)
@@ -21,6 +22,8 @@
                 Create Link (Cmd+S)
             %li
               %input#code-link{type: 'text'}
+            %li
+              %button.btn.btn-primary#help-link Help
 
     .row
       .col-md-4
@@ -45,3 +48,53 @@
           .panel-body
             .bottom-pane#result_pane
               %iframe#result-frame(frameborder="0")
+    #sidebar-left.sidebar
+      / Sidebar content
+      #sidebar-content
+        %button.btn.btn-xs#show-compiled-javascript Show Compiled Javascript
+        #accordianParent.accordion
+          .accordion-group
+            .accordion-heading
+              %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#directions"}
+                Directions
+            #directions.accordion-body.collapse
+              .accordion-inner-small
+                This something like jsBin but with an Opal focus.  It inclues other things like a built
+            .accordion-heading
+              %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-docs"}
+                Opal Docs
+            #opal-docs.accordion-body.collapse
+              .accordion-inner-small
+                %iframe(src='http://opalrb.org/docs/')
+            .accordion-heading
+              %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-jquery-docs"}
+                Opal jQuery Docs
+            #opal-jquery-docs.accordion-body.collapse
+              .accordion-inner-small
+                %iframe(src='http://opalrb.org/docs/jquery/')
+            .accordion-heading
+              %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#opal-browser-docs"}
+                Opal Browser Docs
+            #opal-browser-docs.accordion-body.collapse
+              .accordion-inner-small
+                %iframe(src='https://github.com/opal/opal-browser')
+            .accordion-heading
+              %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#lissio-docs"}
+                Lissio Docs
+            #lissio-docs.accordion-body.collapse
+              .accordion-inner-small
+                %iframe(src='https://github.com/meh/lissio')
+
+      %a#toggleSidebar.toggles{:href => "#"}
+        %i.glyphicon.glyphicon-chevron-right
+
+
+    #sidebar-right.sidebar
+      %a#toggleSidebar-right.toggles{:href => "#"}
+        %i.glyphicon.glyphicon-chevron-left
+
+      / Sidebar content
+      #sidebar-content-right
+        %h1 Compiled Javascript
+        #sidebar-results
+          #javascript_pane
