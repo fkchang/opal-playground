@@ -86,13 +86,15 @@
                 Opal Browser Docs
             #opal-browser-docs.accordion-body.collapse
               .accordion-inner-small
-                / %iframe.iframe-docs(src='https://github.com/opal/opal-browser')
+                / %iframe.iframe-docs(src='http://github.com/opal/opal-browser')
+                = link_to 'github link', 'http://github.com/opal/opal-browser', target: "_blank"
             .accordion-heading
               %a.accordion-toggle-small{"data-parent" => "#accordianParent", "data-toggle" => "collapse", :href => "#lissio-docs"}
                 Lissio Docs
             #lissio-docs.accordion-body.collapse
               .accordion-inner-small
-                / %iframe.iframe-docs(src='https://github.com/meh/lissio')
+                / %iframe.iframe-docs(src='http://github.com/meh/lissio')
+                = link_to 'github link', 'http://github.com/meh/lissio', target: "_blank"
 
       %a#toggleSidebar.toggles{:href => "#"}
         %i.glyphicon.glyphicon-chevron-right
