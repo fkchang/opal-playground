@@ -9,11 +9,16 @@
       .CodeMirror-scroll { height: 100% !important; }
 
   %body
-    %nav.navbar.navbar-default
-      .navbar-header
-        %a.navbar-brand Opal Playground - RSpec
+    %nav.navbar.navbar-default.navbar-fixed-top
       .container
-        .collapse.navbar-collapse
+        .navbar-header
+          %button.navbar-toggle{type: "button", "data-toggle" => "collapse", "data-target" => ".navbar-ex1-collapse" }
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand Opal Playground - RSpec
+
+        .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav(style="padding: 7px")
             %li
               %button.btn.btn-primary#run-code
