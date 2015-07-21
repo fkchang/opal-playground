@@ -8,22 +8,27 @@
 
   %body
     %nav.navbar.navbar-default
-      .navbar-header
-        %a.navbar-brand Opal Playground
       .container
+        .navbar-header
+          %button.navbar-toggle{type: "button", "data-toggle" => "collapse", "data-target" => ".navbar-ex1-collapse" }
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          %a.navbar-brand Opal Playground
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
 
             %li
-              %button.btn.btn-primary#run-code
+              %button.btn-xs.btn-primary#run-code
                 Run Code (Cmd+Enter)
             %li
-              %button.btn.btn-primary#create-link
+              %button.btn.btn-xs.btn-primary#create-link
                 Create Link (Cmd+S)
             %li
               %input#code-link{type: 'text'}
             %li
-              %button.btn.btn-primary#help-link Help
+              %button.btn.btn-xs.btn-primary#help-link Help
 
     .row
       .col-md-4
