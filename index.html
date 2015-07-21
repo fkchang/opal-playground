@@ -8,19 +8,24 @@
   </head>
   <body>
     <nav class='navbar navbar-default'>
-      <div class='navbar-header'>
-        <a class='navbar-brand'>Opal Playground</a>
-      </div>
       <div class='container'>
+        <div class='navbar-header'>
+          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand'>Opal Playground</a>
+        </div>
         <div class='collapse navbar-collapse'>
           <ul class='nav navbar-nav'>
             <li>
-              <button class='btn btn-primary' id='run-code'>
+              <button class='btn-xs btn-primary' id='run-code'>
                 Run Code (Cmd+Enter)
               </button>
             </li>
             <li>
-              <button class='btn btn-primary' id='create-link'>
+              <button class='btn btn-xs btn-primary' id='create-link'>
                 Create Link (Cmd+S)
               </button>
             </li>
@@ -28,7 +33,7 @@
               <input id='code-link' type='text'>
             </li>
             <li>
-              <button class='btn btn-primary' id='help-link'>Help</button>
+              <button class='btn btn-xs btn-primary' id='help-link'>Help</button>
             </li>
           </ul>
         </div>
