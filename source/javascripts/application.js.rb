@@ -144,6 +144,7 @@ module Playground
 #{CODEMIRROR_STYLE}
 #{JQUERY_UI_DIALOG_CSS}
            </style>
+          <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <style>#{css}</style>
           </head>
           <body>
