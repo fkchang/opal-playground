@@ -5,6 +5,8 @@ require 'opal-jquery'
 require 'browser'
 require 'lissio'
 require 'reactive-ruby'
+require 'clearwater'
+require 'grand_central'
 require 'browser/interval'      # gives us wrappers on javascript methods such as setTimer and setInterval
 require 'browser/delay'
 require 'reactive-router'
