@@ -149,7 +149,7 @@ module Playground
           </head>
           <body>
             #{html}
-            <script src="javascripts/result_boot.js"></script>
+            <script src="javascripts/result_boot_wrapper.js"></script>
             <script>
               #{javascript}
             </script>

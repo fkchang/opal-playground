@@ -43,7 +43,7 @@ module Playground
           <head>
           </head>
           <body>
-            <script src="../javascripts/rspec_results.js"></script>
+            <script src="../javascripts/rspec_results_wrapper.js"></script>
             <script>
               #{js}
             </script>
